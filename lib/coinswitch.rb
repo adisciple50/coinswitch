@@ -30,16 +30,20 @@ module Coinswitch
       def pairs
 
       end
-      def offer
+      def rate
 
       end
+
       def order
 
       end
       def orderid
 
       end
-      def bulk_offer
+      def bulk_rate
+
+      end
+      def orders
 
       end
     end

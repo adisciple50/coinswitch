@@ -45,6 +45,8 @@ module Coinswitch
       end
 
       def pairs(depositCoin,destinationCoin)
+        ##
+        # determines if pairs are valid if the response is ok
         @@response = self.class.post('/pairs',
                                      headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},
                                      body:JSON.unparse({'depositCoin'=> depositCoin,
@@ -71,7 +73,7 @@ module Coinswitch
         return JSON.parse @@response.body
       end
       def bulk_rate
-
+      #   TODO - Bulk Rate implementation
       end
       def orders(start,count)
         @@response = self.class.get('/coins',headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},query:{'start'=> start,'count' => count})

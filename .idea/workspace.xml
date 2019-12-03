@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/coinswitch@coinswitch.coverage" NAME="coinswitch Coverage Results" MODIFIED="1575382593448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="coinswitch" />
+    <SUITE FILE_PATH="coverage/coinswitch@coinswitch.coverage" NAME="coinswitch Coverage Results" MODIFIED="1575385108495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="coinswitch" />
     <SUITE FILE_PATH="coverage/coinswitch@Run_test__coinswitch_test___coinswitch.coverage" NAME="Run test 'coinswitch_test': coinswitch Coverage Results" MODIFIED="1575305581097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="coinswitch" />
     <SUITE FILE_PATH="coverage/coinswitch@test_it_gets_supported_coins__coinswitch.coverage" NAME="test_it_gets_supported_coins: coinswitch Coverage Results" MODIFIED="1575305560211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="coinswitch" />
   </component>
@@ -22,8 +22,8 @@
       <file leaf-file-name="coinswitch_test.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/coinswitch_test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="391">
+              <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -33,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/lib/coinswitch.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
-              <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+              <caret line="58" column="61" lean-forward="true" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -259,7 +259,7 @@
       <updated>1575117905580</updated>
       <workItem from="1575117907281" duration="4584000" />
       <workItem from="1575298158603" duration="7776000" />
-      <workItem from="1575379013472" duration="3747000" />
+      <workItem from="1575379013472" duration="7124000" />
     </task>
     <task id="LOCAL-00001" summary="added changelog">
       <created>1575299538942</created>
@@ -324,7 +324,28 @@
       <option name="project" value="LOCAL" />
       <updated>1575382690788</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="corrected rate method.">
+      <created>1575382779607</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1575382779607</updated>
+    </task>
+    <task id="LOCAL-00011" summary="filled in some test parameters.">
+      <created>1575385627496</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575385627496</updated>
+    </task>
+    <task id="LOCAL-00012" summary="implemented order,orderid,orders parameters.">
+      <created>1575385706844</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575385706844</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -336,7 +357,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16107000" />
+    <option name="totallyTimeSpent" value="19484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -378,7 +399,10 @@
     <MESSAGE value="set test_helper to require_relative instead of require." />
     <MESSAGE value="changed offer to rate." />
     <MESSAGE value="wrote coins,coins_list,pairs,rate functions." />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote coins,coins_list,pairs,rate functions." />
+    <MESSAGE value="corrected rate method." />
+    <MESSAGE value="filled in some test parameters." />
+    <MESSAGE value="implemented order,orderid,orders parameters." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented order,orderid,orders parameters." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -529,8 +553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/coinswitch_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="391">
+          <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -538,7 +562,7 @@
     <entry file="file://$PROJECT_DIR$/lib/coinswitch.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+          <caret line="58" column="61" lean-forward="true" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
           <folding />
         </state>
       </provider>

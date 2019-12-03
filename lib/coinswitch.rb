@@ -51,7 +51,7 @@ module Coinswitch
                                                         'destinationCoin' => destinationCoin}))
         return @@response.body
       end
-      def rate
+      def rate(depositCoin,destinationCoin)
         @@response = self.class.post('/rate',
                                      headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},
                                      body:JSON.unparse({'depositCoin'=> depositCoin,'destinationCoin' => destinationCoin})
@@ -76,4 +76,4 @@ module Coinswitch
 end
 
 client = Coinswitch::Dynamic::DynamicClient.new
-puts client.pairs("btc","eth")
+puts client.rate("btc","eth")

@@ -59,21 +59,27 @@ module Coinswitch
         return @@response.body
       end
 
-      def order
-
+      def order(depositCoin,destinationCoin,depositCoinAmount,destinationAddress,refundAddress,callbackUrl='')
+        @@response = self.class.post('/rate',
+                                     headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},
+                                     body:JSON.unparse({'depositCoin'=> depositCoin,'destinationCoin' => destinationCoin, 'depositCoinAmount' => depositCoinAmount,'destinationAddress' => destinationAddress,'refundAddress' => refundAddress,'callbackUrl' => callbackUrl})
+        )
+        return @@response.body
       end
-      def orderid
-
+      def orderid(orderid)
+        @@response = self.class.get('/order/'+ orderid.to_s,headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},query:{'orderid'=> orderid})
+        return JSON.parse @@response.body
       end
       def bulk_rate
 
       end
-      def orders
-
+      def orders(start,count)
+        @@response = self.class.get('/coins',headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},query:{'start'=> start,'count' => count})
+        return JSON.parse @@response.body
       end
     end
   end
 end
 
 client = Coinswitch::Dynamic::DynamicClient.new
-puts client.rate("btc","eth")
+puts client.orderid('11111111-6c9e-4c53-9a6d-55e089aebd04')

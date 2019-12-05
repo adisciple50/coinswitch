@@ -1,8 +1,7 @@
 # Coinswitch
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/coinswitch`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A simple wrapper round httparty requests for coinswitch. 
+no errors that can be thrown are included yet.
 
 ## Installation
 
@@ -22,7 +21,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+explore the gem to an overview of the methods.
+
+
+`
+require 'coinswitch'
+client = Coinswitch::Dynamic::DynamicClient.new
+puts client.orderid('11111111-6c9e-4c53-9a6d-55e089aebd04')`
+
+this will use ipify to fetch your external ip and use the development sandbox credentials to make queries.
+the resultant requests are passed through JSON.parse to create a ruby dict. Currently their is no error handling or errors.
+the queries themselves are just httparty requests. simple to modify.
+
+the current initialize for the DynamicClient Class looks like this:
+`def initialize(ip_address=Ipify.ip,api_key=Coinswitch::SANDBOX_API_KEY)`
+so dead simple. the methods are named after the endpoints which are described here:
+https://developer.coinswitch.co/reference#instant-exchange-api with the exception of
+`puts client.coins_list` which is a convenience feature i added. it returns an array of coins that can be traded.
+
+right now this simple library just does the job and pull requests are welcomed.
+
+its just a wrapper round httparty requests.
 
 ## Development
 

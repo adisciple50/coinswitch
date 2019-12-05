@@ -12,13 +12,12 @@ module Coinswitch
       # This class is a request constructor for coinswitch. It is the client for the dynamic api endpoints.
       include HTTParty
       base_uri 'https://api.coinswitch.co/v2'
-      def initialize(ip_address=Ipify.ip,api_key=Coinswitch::SANDBOX_API_KEY,sandbox=true)
+      def initialize(ip_address=Ipify.ip,api_key=Coinswitch::SANDBOX_API_KEY)
         ##
         # This Initialises the client and populates the coins list
 
         @ip_address = ip_address
         @api_key = api_key
-        @sandbox = sandbox
         @coins = coins
       end
 
@@ -51,14 +50,14 @@ module Coinswitch
                                      headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},
                                      body:JSON.unparse({'depositCoin'=> depositCoin,
                                                         'destinationCoin' => destinationCoin}))
-        return @@response.body
+        return  JSON.parse @@response.body
       end
       def rate(depositCoin,destinationCoin)
         @@response = self.class.post('/rate',
                                      headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},
                                      body:JSON.unparse({'depositCoin'=> depositCoin,'destinationCoin' => destinationCoin})
                                     )
-        return @@response.body
+        return JSON.parse @@response.body
       end
 
       def order(depositCoin,destinationCoin,depositCoinAmount,destinationAddress,refundAddress,callbackUrl='')
@@ -66,14 +65,20 @@ module Coinswitch
                                      headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},
                                      body:JSON.unparse({'depositCoin'=> depositCoin,'destinationCoin' => destinationCoin, 'depositCoinAmount' => depositCoinAmount,'destinationAddress' => destinationAddress,'refundAddress' => refundAddress,'callbackUrl' => callbackUrl})
         )
-        return @@response.body
+        return JSON.parse @@response.body
       end
       def orderid(orderid)
         @@response = self.class.get('/order/'+ orderid.to_s,headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},query:{'orderid'=> orderid})
         return JSON.parse @@response.body
       end
-      def bulk_rate
-      #   TODO - Bulk Rate implementation
+      def bulk_rate(input)
+        ##
+        # https://developer.coinswitch.co/reference#post-v2bulk-rate
+        @@response = self.class.post('/rate',
+                                     headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},
+                                     body:JSON.unparse(input)
+        )
+        return JSON.parse @@response.body
       end
       def orders(start,count)
         @@response = self.class.get('/coins',headers:{'x-api-key':@api_key,'x-user-ip':@ip_address},query:{'start'=> start,'count' => count})

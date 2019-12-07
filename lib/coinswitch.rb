@@ -88,5 +88,5 @@ module Coinswitch
   end
 end
 
-client = Coinswitch::Dynamic::DynamicClient.new
-puts client.orderid('11111111-6c9e-4c53-9a6d-55e089aebd04')
+# client = Coinswitch::Dynamic::DynamicClient.new
+# puts client.orderid('11111111-6c9e-4c53-9a6d-55e089aebd04')
